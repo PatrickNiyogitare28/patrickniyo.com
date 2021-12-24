@@ -11,26 +11,26 @@ type IndexProps = {
 };
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
+  const tags: Array<string> = [
+    'Flutter', 'Typescript', 'Nodejs','React','Nestjs', 'Springboot', 'Git','CLIs', 'Azure'
+  ]
   return (
     <Layout>
-      <h1>Home Page</h1>
-      <p>Next.js starter for your next blog or personal site. Built with:</p>
-      <ul className="list-disc pl-4 my-6">
-        <li>Next.js</li>
-        <li className="mt-2">Typescript</li>
-        <li className="mt-2">MDX</li>
-        <li className="mt-2">Tailwind CSS</li>
-      </ul>
+      <h1>Code Ark</h1>
+      <p>Blogging Garden for <code>Programming tips</code>,<code>Tutorials</code>, <code>Trending tools</code> & <code>Practices</code></p>
 
-      <a
-        href="https://github.com/ChangoMan/nextjs-typescript-mdx-blog"
-        className="inline-block px-7 py-3 rounded-md text-white dark:text-white bg-blue-600 hover:bg-blue-700 hover:text-white dark:hover:text-white"
-      >
-        Get the source code!
-      </a>
+      <h1>Tags 🏷️</h1>
+      <div className="mt-2">
+      {tags.map((tag:string, index:number) => (
+        <code 
+        className='ml-2 text-xs border p-2 rounded'
+        key={index.toString()}>{tag}</code>
+      ))}
+      </div>
 
+      <h1 className="mt-10">Articles</h1>
       {posts.map((post) => (
-        <article key={post.slug} className="mt-12">
+        <article key={post.slug} className="mt-5">
           <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
             {format(parseISO(post.date), 'MMMM dd, yyyy')}
           </p>
