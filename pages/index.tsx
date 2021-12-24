@@ -12,7 +12,7 @@ type IndexProps = {
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
   const tags: Array<string> = [
-    'Flutter', 'Typescript', 'Nodejs','React','Nestjs', 'Springboot', 'Git','CLIs'
+    'Flutter', 'Typescript', 'Nodejs','React','Nestjs', 'Springboot', 'Git','CLIs', 'Azure'
   ]
   return (
     <Layout>
