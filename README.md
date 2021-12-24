@@ -31,3 +31,12 @@ npm run dev
 ```
 
 Your new site will be up at http://localhost:3000/
+
+## CODE OF CONDUCT
+We pledge to act and interact in ways that contribute to an open, welcoming,
+diverse, inclusive, and healthy community. Read the [code of conduct](https://github.com/PatrickNiyogitare28/codeark.com/blob/master/CODE_OF_CONDUCT.md) before contributing
+## LICENSE
+[MIT](https://github.com/PatrickNiyogitare28/codeark.com/blob/master/LICENSE)
+
+## MAINTAINER
+patrickniyogitare28@gmail.com
