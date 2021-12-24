@@ -9,7 +9,7 @@ type LayoutProps = {
   customMeta?: MetaProps;
 };
 
-export const WEBSITE_HOST_URL = '';
+export const WEBSITE_HOST_URL = 'https://codeark-com.vercel.app';
 
 const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
