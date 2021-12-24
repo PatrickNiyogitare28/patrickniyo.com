@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import { ISocialMedia } from './interfaces/ISocialMedia';
+import { ISocialMedia } from '../interfaces/ISocialMedia';
 
 export const About = (): JSX.Element => {
   const media: Array<ISocialMedia> = [
@@ -40,15 +40,18 @@ export const About = (): JSX.Element => {
          
         <div className="mt-2">
         {media.map((platform:ISocialMedia, index:number) => (
-          <code>
+          <code  key={index.toString()}>
           <a href={platform.link} target='_blank'
+          rel="noopener noreferrer"
           className='ml-2 text-xs border p-2 rounded'
-          key={index.toString()}>{platform.name}</a>
+         >{platform.name}</a>
           </code>
         ))}
         </div>
 
-        <p className='mt-5'>You can reach out via <a href='mailto:patrickniyogitare28@gmail.com' target='_blank'>patrickniyogitare28@gmail.com</a></p>
+        <p className='mt-5'>You can reach out via <a href='mailto:patrickniyogitare28@gmail.com'
+        rel="noopener noreferrer"
+        target='_blank'>patrickniyogitare28@gmail.com</a></p>
         </div>
       </div>
     </Layout>
