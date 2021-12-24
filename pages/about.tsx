@@ -40,10 +40,10 @@ export const About = (): JSX.Element => {
          
         <div className="mt-2">
         {media.map((platform:ISocialMedia, index:number) => (
-          <code>
+          <code  key={index.toString()}>
           <a href={platform.link} target='_blank'
           className='ml-2 text-xs border p-2 rounded'
-          key={index.toString()}>{platform.name}</a>
+         >{platform.name}</a>
           </code>
         ))}
         </div>
