@@ -19,7 +19,7 @@ My personal blogging garden, where I share programming skills, tutorials and Bes
 
 ```bash
 git clone https://github.com/PatrickNiyogitare28/codeark.com.git
-cd nextjs-typescript-mdx-blog
+cd codeark.com
 
 yarn install
 # or
