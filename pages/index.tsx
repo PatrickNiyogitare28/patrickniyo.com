@@ -17,10 +17,10 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
   return (
     <Layout>
       <h1>Code Ark</h1>
-      <p>Blogging Garden for <code>Programming tips</code>,<code>Tutorials</code>, <code>Trending tools</code> & <code>Practices</code></p>
+      <p >Blogging Garden for <code>Programming tips</code>,<code>Tutorials</code>, <code>Trending tools</code> & <code>Practices</code></p>
 
       <h1>Tags 🏷️</h1>
-      <div className="mt-2">
+      <div className="mt-2 tags-wrapper">
       {tags.map((tag:string, index:number) => (
         <code 
         className='ml-2 text-xs border p-2 rounded'

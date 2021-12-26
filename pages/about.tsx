@@ -18,7 +18,7 @@ export const About = (): JSX.Element => {
       link: 'https://www.linkedin.com/in/patrick-niyogitare-76b469184/'
     },
     {
-      name:'Github gist',
+      name:'Gist',
       link:'https://gist.github.com/PatrickNiyogitare28'
     }
   ]
@@ -28,7 +28,7 @@ export const About = (): JSX.Element => {
         title: 'About - Code-Ark',
       }}
     >
-      <div className='flex justify-between w-4/5  items-center' style={{height:'60vh'}}>
+      <div className='flex justify-between w-4/5  items-center about-container' style={{height:'60vh'}}>
         <div className='w-2/5'>
           <Image src="/images/avatar.jpg" alt="Patrick Niyogitare" width="200" height="200" 
           className='rounded-full'
@@ -38,7 +38,7 @@ export const About = (): JSX.Element => {
         <h2>Patrick Niyogitare</h2>
         <p className='mt-10'>Software engineering candidate @RwCodingAcademy. 🎯 building experience working with teams. blogger | Open source enthusiast.</p>
          
-        <div className="mt-2">
+        <div className="mt-2 social-wrapper">
         {media.map((platform:ISocialMedia, index:number) => (
           <code  key={index.toString()}>
           <a href={platform.link} target='_blank'
