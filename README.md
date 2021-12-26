@@ -2,7 +2,7 @@
 
 My personal blogging garden, where I share programming skills, tutorials and Best coding and performance practices.
 
-![Build Workflows](https://github.com/divinirakiza/ivuliro-rda-frontend/actions/workflows/superlinter.yml/badge.svg)
+![Build Workflows](https://github.com/PatrickNiyogitare28/codeark.com/actions/workflows/superlinter.yml/badge.svg)
 
 ## Tools
 - [Typescript](https://www.typescriptlang.org/)
