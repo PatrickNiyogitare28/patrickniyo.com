@@ -3,6 +3,8 @@ import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
 import ThemeSwitch from './ThemeSwitch';
+import Image from 'next/image'
+import Link from 'next/link'
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -17,7 +19,12 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
       <Head customMeta={customMeta} />
       <header>
         <div className="max-w-5xl px-8 mx-auto">
-          <div className="flex items-center justify-between py-6">
+          <div className="flex items-center justify-between py-6 cursor-pointer">
+            <Link href="/">
+            <div className='bg-black border rounded-md flex items-center'>
+            <Image src="/images/logo.png" width="50" height="40" draggable="false"/>
+            </div >
+            </Link>
             <Navigation />
             <ThemeSwitch />
           </div>
@@ -33,7 +40,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
             className="text-gray-900 dark:text-white"
             href="https://twitter.com/niyogiare"
           >
-            Patrick Niyogitare
+            Patrick Niyogitare &copy; {new Date().getFullYear()}
           </a>
         </div>
       </footer>
