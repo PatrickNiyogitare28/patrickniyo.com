@@ -5,4 +5,15 @@
      grid-template-columns: auto auto auto;
      grid-row-gap: 0.5em;
     }
+    .about-container{
+        margin-top: 2em;
+        flex-direction: column;
+        height: max-content;
+        width: 85vw;
+        text-align: center;
+    }
+    .social-wrapper{
+        display: flex;
+        margin-top: 2em;
+    }
 }
