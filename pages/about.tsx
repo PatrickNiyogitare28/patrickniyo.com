@@ -38,7 +38,7 @@ export const About = (): JSX.Element => {
         <h2>Patrick Niyogitare</h2>
         <p className='mt-10'>Software engineering candidate @RwCodingAcademy. 🎯 building experience working with teams. blogger | Open source enthusiast.</p>
          
-        <div className="mt-2">
+        <div className="mt-2 social-wrapper">
         {media.map((platform:ISocialMedia, index:number) => (
           <code  key={index.toString()}>
           <a href={platform.link} target='_blank'
