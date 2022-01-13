@@ -42,6 +42,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   };
   return (
     <Layout customMeta={customMeta}>
+      <div className='flex justify-around'>
       <article>
         <h1 className="mb-3 text-gray-900 dark:text-white">
           {frontMatter.title}
@@ -50,9 +51,10 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
         </p>
         <div className="prose dark:prose-dark">
-          <MDXRemote {...source} components={components} />
+          <MDXRemote {...source} components={components}/>
         </div>
       </article>
+      </div>
     </Layout>
   );
 };
