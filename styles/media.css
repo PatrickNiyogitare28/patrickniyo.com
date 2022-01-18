@@ -1,3 +1,17 @@
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  body::-webkit-scrollbar-thumb {
+    background: #555657; 
+  
+  }
+  body::-webkit-scrolrlbar-thumb:hover {
+    background: #555657;
+  
+  }
 @media only screen and (max-width: 600px) {
     .tags-wrapper{
      width: 85vw;
