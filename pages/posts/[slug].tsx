@@ -1,3 +1,4 @@
+import React from 'react';
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -9,9 +10,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import path from 'path';
-import React from 'react';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import { useRouter } from 'next/router';
 import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
 import { MetaProps } from '../../types/layout';
 import { PostType } from '../../types/post';
@@ -33,6 +34,7 @@ type PostPageProps = {
 };
 
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
+  const router: any = useRouter();
   const customMeta: MetaProps = {
     title: `${frontMatter.title} - Code-Ark`,
     description: frontMatter.description,
@@ -49,9 +51,17 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
         >
           {frontMatter.title}
         </h1>
-        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
+        <div className='flex my-5 mb-10' style={{height:'50px'}}>
+        <Image 
+        src="/authors/pn.jpg" 
+        width="50" 
+        height="50" 
+        className='rounded-full cursor-pointer avatar-style' 
+        onClick={() => router.push('/about')}/>
+        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400 ml-5" style={{ marginTop:'2%'}}>
           {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
         </p>
+        </div>
         <div className="prose text-lg dark:prose-dark">
           <MDXRemote {...source} components={components}/>
         </div>
