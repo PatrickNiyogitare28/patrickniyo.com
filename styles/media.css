@@ -5,6 +5,12 @@
      grid-template-columns: auto auto auto;
      grid-row-gap: 0.5em;
     }
+    .post-tags-wrapper{
+        width: max-content;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 0.5em;
+    }
     .about-container{
         margin-top: 2em;
         flex-direction: column;
