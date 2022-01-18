@@ -1,9 +1,32 @@
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+  body::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  body::-webkit-scrollbar-thumb {
+    background: #555657; 
+  
+  }
+  body::-webkit-scrolrlbar-thumb:hover {
+    background: #555657;
+  
+  }
+.avatar-style{
+    border: 2px solid grey !important;
+}
 @media only screen and (max-width: 600px) {
     .tags-wrapper{
      width: 85vw;
      display: grid;
      grid-template-columns: auto auto auto;
      grid-row-gap: 0.5em;
+    }
+    .post-tags-wrapper{
+        width: max-content;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row-gap: 0.5em;
     }
     .about-container{
         margin-top: 2em;
