@@ -12,8 +12,8 @@ interface IProps {
 const ArticleFooter = ({posts}: IProps): JSX.Element => {
     return (
         <div>
-            {posts.map(({title, description}: PostType, index: number) => (
-                <div className="grid-cols-3">
+            {posts.map(({title}: PostType, index: number) => (
+                <div className="grid-cols-3" key={index.toString()}>
                     <h3>{title}</h3>
                 </div>
             ))}
