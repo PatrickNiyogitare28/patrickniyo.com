@@ -17,6 +17,7 @@ import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
 import { MetaProps } from '../../types/layout';
 import { PostType } from '../../types/post';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
+import ArticleFooter from '../../components/ArticleFooter';
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -45,28 +46,40 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   return (
     <Layout customMeta={customMeta}>
       <div className='flex justify-around'>
-      <article>
-        <h1 className="mb-3 text-5xl text-gray-900 dark:text-white"
-        //  style={{width:'30%'}}
-        >
-          {frontMatter.title}
-        </h1>
-        <div className='flex my-5 mb-10' style={{height:'50px'}}>
-        <Image 
-        src="/authors/pn.jpg" 
-        width="50" 
-        height="50" 
-        className='rounded-full cursor-pointer avatar-style' 
-        onClick={() => router.push('/about')}/>
-        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400 ml-5" style={{ marginTop:'2%'}}>
-          {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
-        </p>
-        </div>
-        <div className="prose text-lg dark:prose-dark">
-          <MDXRemote {...source} components={components}/>
-        </div>
-      </article>
+        <article>
+          <h1 className="mb-3 text-5xl text-gray-900 dark:text-white"
+          >
+            {frontMatter.title}
+          </h1>
+          <div className='flex my-5 mb-10' style={{ height: '50px' }}>
+            <Image
+              src="/authors/pn.jpg"
+              width="50"
+              height="50"
+              className='rounded-full cursor-pointer avatar-style'
+              onClick={() => router.push('/about')} />
+            <p className="mb-10 text-sm text-gray-500 dark:text-gray-400 ml-5" style={{ marginTop: '2%' }}>
+              {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
+            </p>
+          </div>
+          <div className="prose text-lg dark:prose-dark">
+            <MDXRemote {...source} components={components} />
+          </div>
+          <div className='mt-10' >
+            <Image
+              src="/icons/back-icon.svg"
+              height="50px"
+              width="50px"
+              className='hover:scale-90 mt-10 cursor-pointer'
+              onClick={() => router.push('/')}
+            />
+          </div>
+        </article>
       </div>
+      {/* <div className="mt-10">
+        <p className='text-xl'>Read more interesting articles ....</p>
+        <ArticleFooter />
+      </div> */}
     </Layout>
   );
 };
