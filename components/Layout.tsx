@@ -40,7 +40,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           Built with ❣️ by{' '}
           <a
             className="text-gray-900 dark:text-white"
-            href="https://twitter.com/niyogiare"
+            href="https://twitter.com/niyogitare"
           >
             Patrick Niyogitare &copy; {new Date().getFullYear()}
           </a>
