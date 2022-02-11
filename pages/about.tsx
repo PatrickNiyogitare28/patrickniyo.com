@@ -28,16 +28,17 @@ export const About = (): JSX.Element => {
         title: 'About - Code-Ark',
       }}
     >
+      
       <div className='flex justify-between w-4/5  items-center about-container' style={{height:'60vh'}}>
         <div className='w-2/5'>
           <Image src="/images/avatar.jpg" alt="Patrick Niyogitare" width="200" height="200" 
           className='rounded-full'
           />
         </div>
+        
         <div className='w-4/5'>
         <h2>Patrick Niyogitare</h2>
         <p className='mt-10'>Software engineering candidate @RwCodingAcademy. 🎯 building experience working with teams. blogger | Open source enthusiast.</p>
-         
         <div className="mt-2 social-wrapper">
         {media.map((platform:ISocialMedia, index:number) => (
           <code  key={index.toString()}>
@@ -54,6 +55,10 @@ export const About = (): JSX.Element => {
         target='_blank'>patrickniyogitare28@gmail.com</a></p>
         </div>
       </div>
+      <div className='w-full'>
+          <Image src="https://activity-graph.herokuapp.com/graph?username=patrickniyogitare28&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=1f6fea&color=fefefe"
+           height={500} width={1000}/>
+        </div>
     </Layout>
   );
 };
