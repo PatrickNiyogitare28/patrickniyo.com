@@ -17,7 +17,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
     <>
       <Head customMeta={customMeta} />
-      <header className='shadow-sm'>
+      <header className='shadow-sm dark:bg-[#13181a]'>
         <div className="max-w-5xl px-4 mx-auto">
           <div className="flex items-center justify-between py-2 cursor-pointer">
             <div style={{ width: '25%' }} className='flex justify-between items-center'>
