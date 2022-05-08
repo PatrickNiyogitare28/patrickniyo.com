@@ -12,25 +12,42 @@ type IndexProps = {
 
 export const Index = ({ posts }: IndexProps): JSX.Element => {
   const tags: Array<string> = [
-    'Flutter', 'Typescript', 'Nodejs', 'React', 'Nestjs', 'Springboot', 'Git', 'CLIs', 'Azure'
-  ]
+    'Flutter',
+    'Typescript',
+    'Nodejs',
+    'React',
+    'Nestjs',
+    'Springboot',
+    'Git',
+    'CLIs',
+    'Azure',
+  ];
   return (
     <Layout>
       <h1>Code Ark</h1>
-      <p >Blogging Garden for <code>Programming tips</code>,<code>Tutorials</code>, <code>Trending tools</code> & <code>Practices</code></p>
+      <p>
+        Blogging Garden for <code>Programming tips</code>,<code>Tutorials</code>
+        , <code>Trending tools</code> & <code>Practices</code>
+      </p>
 
       <h1>Tags 🏷️</h1>
       <div className="mt-2 tags-wrapper">
         {tags.map((tag: string, index: number) => (
           <code
-            className='ml-2 text-xs border p-2 rounded'
-            key={index.toString()}>{tag}</code>
+            className="ml-2 text-xs border p-2 rounded"
+            key={index.toString()}
+          >
+            {tag}
+          </code>
         ))}
       </div>
 
       <h1 className="mt-10">Articles</h1>
       {posts.map((post) => (
-        <article key={post.slug} className="mt-5 p-5  rounded-lg shadow shadow-green-600 dark:border">
+        <article
+          key={post.slug}
+          className="mt-5 p-5  rounded-lg shadow shadow-green-600 dark:border"
+        >
           <p className="mb-1 text-sm text-gray-500 dark:text-gray-400">
             {format(parseISO(post.date), 'MMMM dd, yyyy')}
           </p>
@@ -41,13 +58,15 @@ export const Index = ({ posts }: IndexProps): JSX.Element => {
               </a>
             </Link>
           </h1>
-          <div className='mt-5 mb-5 post-tags-wrapper'>
+          <div className="mt-5 mb-5 post-tags-wrapper">
             {post.tags.map((tag: string, index: number) => (
               <code
                 key={index.toString()}
                 className="text-sm ml-2 font-light border py-1 px-5 rounded-2xl cursor-pointer"
                 style={{ color: 'grey' }}
-              >#{tag.toLowerCase()}</code>
+              >
+                #{tag.toLowerCase()}
+              </code>
             ))}
           </div>
           <p className="mb-3">{post.description}</p>

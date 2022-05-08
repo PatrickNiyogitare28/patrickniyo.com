@@ -3,27 +3,29 @@ title: Enumerations in Javascript
 description: Enumerations offer an easy way to work with sets of related constants. Eventhough javascript doesn't accept enums, how can this practice be achieved?
 date: '2021-04-15'
 image: '/images/git-auth.png'
-tags: 
-- enums
-- javascript
+tags:
+  - enums
+  - javascript
 ---
 
-_____________________________________
+---
 
 ## How to define enums in Javascipt
+
 <p>
   <b>Enumerations</b> offer an easy way to work with sets of related constants.
-  <b>An enumeration</b>, or <b>Enum</b> , is a symbolic name for a set of values. 
-  Enumerations are treated as data types, and you can use them to create sets of constants for use with variables and properties.
+  <b>An enumeration</b>, or <b>Enum</b> , is a symbolic name for a set of values.
+  Enumerations are treated as data types, and you can use them to create sets of
+  constants for use with variables and properties.
 </p>
 
 <p>
-  Natively javascript doesn't support <b>enums</b> but still you can implement enum in javascipt.
-  One of the available ways is to defining an object and then freezing it after definition. 
-  <b>A frozen</b> object can not be modified or you can not add other properties after definition and it's values can not be        changed/modified.
-  This keeps the <b>enumeration idea</b>
+  Natively javascript doesn't support <b>enums</b> but still you can implement
+  enum in javascipt. One of the available ways is to defining an object and then
+  freezing it after definition.
+  <b>A frozen</b> object can not be modified or you can not add other properties
+  after definition and it's values can not be changed/modified. This keeps the <b>enumeration idea</b>
 </p>
-
 
 ## Syntax to create an enum in javascipt
 
@@ -37,17 +39,20 @@ _____________________________________
       SAT:6
       SUN:7
     };
-    
+
  Object.freeze(daysEnum);
 ```
 
 ## How to access values
-<p>To be able to access 7 as the seventh day of the week using our difined <b>enum</b>, here is the syntax</p>
+
+<p>
+  To be able to access 7 as the seventh day of the week using our difined{' '}
+  <b>enum</b>, here is the syntax
+</p>
 
 ```js
-    let value = daysEnum.SUN; // 7
+let value = daysEnum.SUN; // 7
 ```
-
 
 <h5>Hope that was helpful</h5>
 
