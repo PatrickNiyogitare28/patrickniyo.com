@@ -3,8 +3,8 @@ import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
 import ThemeSwitch from './ThemeSwitch';
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -17,14 +17,22 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
     <>
       <Head customMeta={customMeta} />
-      <header className='shadow-sm dark:bg-[#13181a]'>
+      <header className="shadow-sm dark:bg-[#13181a]">
         <div className="max-w-5xl px-4 mx-auto">
           <div className="flex items-center justify-between py-2 cursor-pointer">
-            <div style={{ width: '25%' }} className='flex justify-between items-center'>
+            <div
+              style={{ width: '25%' }}
+              className="flex justify-between items-center"
+            >
               <Link href="/">
-                <div className='bg-black border rounded-md flex items-center'>
-                  <Image src="/images/logo.png" width="50" height="40" draggable="false" />
-                </div >
+                <div className="bg-black border rounded-md flex items-center">
+                  <Image
+                    src="/images/logo.png"
+                    width="50"
+                    height="40"
+                    draggable="false"
+                  />
+                </div>
               </Link>
               <Navigation />
             </div>
