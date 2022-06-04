@@ -17,7 +17,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
     <>
       <Head customMeta={customMeta} />
-      <header className="shadow-sm dark:bg-[#13181a]">
+      <header className="gradient-header">
         <div className="max-w-5xl px-4 mx-auto">
           <div className="flex items-center justify-between py-2 cursor-pointer">
             <div

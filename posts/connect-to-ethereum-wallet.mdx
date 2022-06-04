@@ -1,0 +1,390 @@
+---
+title: Connecting to Ethereum Wallet
+description: Ultimate guide to build a simple angular dApp wich connects to ethereum wallet
+date: '2022-06-04'
+image: '/images/banner-2.png'
+tags:
+  - web3
+  - angular
+---
+
+---
+
+<Image
+  alt={`WEB3`}
+  src={`/images/banner-2.png`}
+  width={1440}
+  height={960}
+  priority
+/>
+
+The ultimate guide to build a basic angular app wich connects to ethereum wallet
+
+**Ethereum** wallets are applications that let you interact with your Ethereum account. 
+Think of it as an internet banking app – without the bank. Your wallet lets you
+ read your balance, send transactions, and connect to applications.
+
+ ## Prerequisites for building this app
+
+To successfully build with me this app you need to have nodejs installed on your develpment computer
+[open this link](https://nodejs.org/) to install nodejs.
+
+Check if your nodejs is installed and it's version
+
+```shell
+$ node --version
+```
+
+Our app is going to be built with angular therefore you need to have the angular [Angular CLI](https://angular.io/cli)
+installed as well.
+
+To check your angular cli version just run the bellow
+
+```shell
+$ ng --version
+```
+
+We will also need to have [Meta mask](https://metamask.io/). If it's your fist time to deal with **Meta mask** I recommend this youtube video
+to help you setting up meta mask and create a meta mask account.
+
+MetaMask is a free web and mobile crypto wallet that allows users to store and swap 
+cryptocurrencies, interact with the Ethereum blockchain ecosystem, 
+and host a growing array of decentralized applications (dApps).
+
+[How to setup metamask](https://www.youtube.com/watch?v=Af_lQ1zUnoM)
+
+## Let's code the app
+
+Now you're set with all the prerequisites. let's just start by creating initializing a basic angular applications
+
+1. Initialize an angular applications
+
+```shell
+$ ng new ng-connect-ethereum-wallet
+```
+
+2. Select **Yes** to allow angular cli creat a project
+
+3. Select SCSS from the prompted list of available styling types
+
+Project initializing may take a couple of minutes depending on your internet and computer capacity.
+Let's give it some time to get done.
+
+Having that done. Let's now check into our project directory.
+
+```shell
+cd ng-connect-ethereum-wallet
+```
+
+## Setting up taiwind for styling
+
+Now to move first with styling our app lets set up tailwind for the quick styling.
+
+The bellow command is a **yarn** version but feel free to use **npm** or **pnpm**. All works perfectly
+
+```shell
+$ yarn add tailwindcss postcss autoprefixer --dev
+```
+
+Having our dependencies installed now let's initialize tailwind in our project
+
+```shell
+$ npx tailwindcss init
+```
+
+The command is going to create `tailwind.config.js` file. Now lets go on and modify it a little bit.
+To configure our content location
+
+```js
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Let's also modify our `src/styles.scss` file to be able to use **tialwind** styles.
+The file may also be `src/styles.css` if you choosed css angular template
+
+```scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Now our Tailwind is well configured.
+
+## Building the service method to connect to ethereum wallet
+
+Now we're going to create a service in which we will be adding our methods to connect to ethereum wallet and another
+to check if the ethereum wallet is connected.
+
+Initializing the service
+
+```shell
+$ ng g service services/wallet
+```
+
+The command is going to create two files `src/app/services/wallet.service.ts` and 
+`src/app/services/wallet.service.spec.ts`
+
+Since we are not going to be writing tests, we're more interested in the `wallet.service.ts`
+
+This is how the file should look initially.
+
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class WalletService {
+  public ethereum;
+  constructor() {}
+}
+```
+
+Well, the time for modifing our `src/app/services/wallet.service.ts` to include include a method to 
+connect to the wallet.
+
+Fist of in our constructor we need to get the ethereum object from the browser window. When you have
+**Meta mask** installed in your browser therefor you can access the `ethereum` object.
+
+Modify the constructor abit with this.
+
+```ts
+...
+
+public ethereum;
+constructor() {
+  const {ethereum} = <any>window
+  this.ethereum = ethereum
+  }
+
+...
+```
+
+Secondly we're going to add a method wich asks to connect to any of our ethereum wallets.
+> Remember we have wallet account setup with metamask. If not the case check [How to setup metamask](https://www.youtube.com/watch?v=Af_lQ1zUnoM)
+
+Bellow our constructor, Let's addin these few lines of the code to allow us to connect to the wallet.
+
+```ts
+...
+  public connectWallet = async () => {
+    try{
+      if(!this.ethereum) return alert("Please install meta mask");
+      const accounts = await this.ethereum.request({method: 'eth_requestAccounts'});
+    }
+    catch(e){
+       throw new Error("No thereum object found")
+    }
+  }
+...
+```
+
+The above async methods checks fist if there is ethereum, if ethereum object is not there possibly you don't have metamask installed
+And it will alert that message
+
+Other wise It send a request `eth_requestAccounts` to ask metamask to connect to any ethereum wallet available.
+
+Thirdly, At some point we will need to check if we have connected to wallet so that we can hide the button to connect to wallet
+That's why we're going to add a method wich checks if there is any connected ethereum object.
+
+The request will use method `eth_accounts`
+
+```ts
+public checkWalletConnected = async () => {
+    try{
+      if(!this.ethereum) return alert("Please install meta mask ")
+      const accounts = await this.ethereum.request({method: 'eth_accounts'});
+      return accounts;
+    }
+    catch(e){
+      throw new Error("No ethereum object found");
+    }
+  }
+```
+
+Like said above if there is not ethereum object, then means that you need to install metamask for this case of ours.
+
+Having that said this is how our `src/app/services/wallet.service.ts` will look like.
+
+```ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class WalletService {
+  public ethereum;
+  constructor() {
+    const {ethereum} = <any>window
+    this.ethereum = ethereum
+   }
+
+  public connectWallet = async () => {
+    try{
+      if(!this.ethereum) return alert("Please install meta mask");
+      const accounts = await this.ethereum.request({method: 'eth_requestAccounts'});
+    }
+    catch(e){
+       throw new Error("No thereum object found")
+    }
+  }
+
+  public checkWalletConnected = async () => {
+    try{
+      if(!this.ethereum) return alert("Please install meta mask ")
+      const accounts = await this.ethereum.request({method: 'eth_accounts'});
+      return accounts;
+    }
+    catch(e){
+      throw new Error("No ethereum object found");
+    }
+  }
+}
+```
+
+## Building the UI to call connect to ethereum wallet
+
+Now it's time to build the UI to connec to use the wallet service by connecting to ethereum wallet plus
+checking if the wallet is connected as well.
+
+### Consuming the service methods in our `app.component.ts`
+
+We're going to benefit from Angular's dependency injection feature. Now let's inject our service into
+our component ts file and call our service methods to connect to wallet.
+
+Let's first inject the service into our component ts file
+
+```ts
+import { Component } from '@angular/core';
+import { WalletService } from './services/wallet.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'ng-connect-ethereum-wallet';
+
+  constructor(private walletService: WalletService){}
+
+}
+```
+
+Having that done let's now call our service method to connect to the wallet.
+
+```ts
+import { Component } from '@angular/core';
+import { WalletService } from './services/wallet.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'ng-connect-ethereum-wallet';
+  constructor(private walletService: WalletService){}
+
+  connectToWallet  = () => {
+    this.walletService.connectWallet();
+  }
+}
+```
+
+We have just built the bussiness logic to connect to the ethereum wallet.
+
+Now going on to call the service method to check if there is any ethereum account connected.
+We're going to create two public properties **walletConnected** and **walletId**
+
+The `walletConnected` is going to be a boolean, true when there is a connected ethereum account and false
+if there is no any connected ethereum account
+
+The `walletId` is going to be nothing but the string typed variable to hold the connected account's id.
+
+Here is how our codebase going to look like. `src/app/app.component.ts`
+
+```ts
+import { Component } from '@angular/core';
+import { WalletService } from './services/wallet.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  title = 'ng-connect-ethereum-wallet';
+
+  public walletConnected: boolean = false;
+  public walletId: string = '';
+
+  constructor(private walletService: WalletService){
+
+  }
+
+  connectToWallet  = () => {
+    this.walletService.connectWallet();
+  }
+
+  checkWalletConnected = async () => {
+    const accounts = await this.walletService.checkWalletConnected();
+    if(accounts.length > 0){
+      this.walletConnected = true;
+      this.walletId = accounts[0];
+    }
+  }
+
+  ngOnInit(): void {
+    this.checkWalletConnected();
+  }
+}
+```
+
+We defined an angular pre-implemented hook method `ngOnInit()` to automatically call
+our `checkWalletConnected` function immediately when our component is rendered.
+
+## Finnaly let's build a UI to interact with our bussiness logic
+
+We are going to delete everything in `src/app/app.component.html` and add new source codebase
+To allow us to connec to the ethereum account.
+
+```html
+<div class="flex justify-around items-center h-[100vh] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+  <div class="flex justify-around flex-col items-center">
+    <h1 class="text-[3em] font-bold" *ngIf="!walletConnected">Connect Ethereum Wallet</h1>
+    <h1 class="text-[3em] font-bold" *ngIf="walletConnected">Connected Ethereum Wallet</h1>
+    <button 
+    *ngIf="!walletConnected"
+    class="bg-gradient-to-r from-green-500 to-blue-500 text-white w-[200px] p-4 rounded-full mt-4"
+    (click)="connectToWallet()"
+    >Connect Wallet</button>
+
+    <div *ngIf="walletConnected" class="bg-gradient-to-r from-green-500 to-blue-500 p-[2em] rounded-xl">
+      <label class="text-white">{{walletId}}</label>
+    </div>
+  </div>
+</div>
+```
+
+The code above will allow us to click the **connect wallet** button when there is no wallet connected.
+And it will also replace the button with the wrapper of the account id when there is an ethereum account connected.
+
+Now you'll have this output. You can use the bellow video if you're stack at some point.
+
+[![Connect to ethereum wallet with angular](https://res.cloudinary.com/marcomontalbano/image/upload/v1654381297/video_to_markdown/images/youtube--LliW2IKCSvI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=LliW2IKCSvI "Connect to ethereum wallet with angular")
+
+> Hope that was awesome you can follow me on twitter or DM for any point. [niyogitare](https://twitter.com/niyogitare)
+
+[#web3]()  [#angular]()
+
+#
