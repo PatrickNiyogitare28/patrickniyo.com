@@ -37,12 +37,12 @@ body::-webkit-scrolrlbar-thumb:hover {
     display: flex;
     margin-top: 2em;
   }
-  .article-wrapper{
+  .article-wrapper {
     width: 85vw;
   }
 }
 
-.gradient-header{
+.gradient-header {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
