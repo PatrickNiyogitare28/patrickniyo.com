@@ -3,7 +3,6 @@ import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
 import ThemeSwitch from './ThemeSwitch';
-import Image from 'next/image';
 import Link from 'next/link';
 
 type LayoutProps = {
@@ -20,21 +19,15 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
       <header className="gradient-header">
         <div className="max-w-5xl px-4 mx-auto">
           <div className="flex items-center justify-between py-2 cursor-pointer">
-            <div
-              style={{ width: '25%' }}
-              className="flex justify-between items-center"
-            >
+            <div style={{}} className="flex justify-between items-center ">
               <Link href="/">
-                <div className="bg-black border rounded-md flex items-center">
-                  <Image
-                    src="/images/logo.png"
-                    width="50"
-                    height="40"
-                    draggable="false"
-                  />
+                <div className="bg-black logo-wrapper  w-[40px] justify-around h-[40px] rounded-full flex items-center">
+                  <label className=" text-center text-white">PN</label>
                 </div>
               </Link>
-              <Navigation />
+              <div className="ml-[2em]">
+                <Navigation />
+              </div>
             </div>
             <ThemeSwitch />
           </div>

@@ -1,4 +1,4 @@
-# Code-Ark
+# [patrickniyo.com](https://patrickniyo.com)
 
 My personal blogging garden, where I share programming skills, tutorials and Best coding and performance practices.
 

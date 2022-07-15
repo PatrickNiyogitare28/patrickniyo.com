@@ -25,7 +25,7 @@ export const About = (): JSX.Element => {
   return (
     <Layout
       customMeta={{
-        title: 'About - Code-Ark',
+        title: 'About - Patrick Niyogitare',
       }}
     >
       <div
