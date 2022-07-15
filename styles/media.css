@@ -37,6 +37,9 @@ body::-webkit-scrolrlbar-thumb:hover {
     display: flex;
     margin-top: 2em;
   }
+  .article-wrapper{
+    width: 85vw;
+  }
 }
 
 .gradient-header{

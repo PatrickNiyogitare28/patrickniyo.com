@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { MetaProps } from '../types/layout';
 
-export const WEBSITE_HOST_URL = 'https://codeark-com.vercel.app';
+export const WEBSITE_HOST_URL = 'https://patrickniyo.com';
 
 const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
   const router = useRouter();
   const meta: MetaProps = {
-    title: 'Code-Ark',
+    title: 'Patrick Niyogitare',
     description:
       'Blogging Garden for Programming tips,Tutorials, Trending tools & Practices',
     image: `${WEBSITE_HOST_URL}/images/site-preview.png`,
@@ -23,7 +23,7 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }): JSX.Element => {
       <meta property="og:url" content={`${WEBSITE_HOST_URL}${router.asPath}`} />
       <link rel="canonical" href={`${WEBSITE_HOST_URL}${router.asPath}`} />
       <meta property="og:type" content={meta.type} />
-      <meta property="og:site_name" content="Code-Ark" />
+      <meta property="og:site_name" content="Patrick-Niyogitare" />
       <meta property="og:description" content={meta.description} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:image" content={meta.image} />

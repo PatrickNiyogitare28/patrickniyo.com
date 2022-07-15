@@ -36,7 +36,7 @@ type PostPageProps = {
 const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   const router: any = useRouter();
   const customMeta: MetaProps = {
-    title: `${frontMatter.title} - Code-Ark`,
+    title: `${frontMatter.title} - patrickniyo.com`,
     description: frontMatter.description,
     image: `${WEBSITE_HOST_URL}${frontMatter.image}`,
     date: frontMatter.date,

@@ -3,7 +3,6 @@ import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
 import ThemeSwitch from './ThemeSwitch';
-import Image from 'next/image';
 import Link from 'next/link';
 
 type LayoutProps = {
@@ -25,13 +24,8 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
               className="flex justify-between items-center"
             >
               <Link href="/">
-                <div className="bg-black border rounded-md flex items-center">
-                  <Image
-                    src="/images/logo.png"
-                    width="50"
-                    height="40"
-                    draggable="false"
-                  />
+                <div className="bg-black  w-[40px] justify-around h-[40px] rounded-full flex items-center">
+                  <label className="text-center text-white">PN</label>
                 </div>
               </Link>
               <Navigation />
