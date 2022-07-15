@@ -40,6 +40,10 @@ body::-webkit-scrolrlbar-thumb:hover {
   .article-wrapper {
     width: 85vw;
   }
+  .logo-wrapper{
+    width: 50px !important;
+    height: 50px;
+  }
 }
 
 .gradient-header {
