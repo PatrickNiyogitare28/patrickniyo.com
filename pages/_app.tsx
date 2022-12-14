@@ -4,6 +4,7 @@ import React from 'react';
 import '../styles/globals.css';
 import '../styles/media.css';
 import '../styles/common.css';
+import './slides/privacy/styles/index.css';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
