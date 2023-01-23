@@ -20,6 +20,14 @@ const Navigation = (): JSX.Element => {
           About
         </a>
       </Link>
+      <Link href="/publications">
+        <a
+          className="text-gray-500 dark:text-white px-6 py-4"
+          style={{ fontWeight: 'bolder' }}
+        >
+          Publications
+        </a>
+      </Link>
     </nav>
   );
 };
