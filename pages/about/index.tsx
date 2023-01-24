@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import Layout from '../components/Layout';
-import { ISocialMedia } from '../interfaces/ISocialMedia';
+import Layout from '../../components/Layout';
+import { ISocialMedia } from '../../interfaces/ISocialMedia';
 
 export const About = (): JSX.Element => {
   const media: Array<ISocialMedia> = [
@@ -20,6 +20,10 @@ export const About = (): JSX.Element => {
     {
       name: 'Gist',
       link: 'https://gist.github.com/PatrickNiyogitare28',
+    },
+    {
+      name: 'Youtube',
+      link: 'https://www.youtube.com/@patrickniyogitare6555/videos',
     },
   ];
   return (
@@ -45,8 +49,17 @@ export const About = (): JSX.Element => {
         <div className="w-4/5">
           <h2>Patrick Niyogitare</h2>
           <p className="mt-10">
-            Software engineering candidate @RwCodingAcademy. 🎯 building
-            experience working with teams. blogger | Open source enthusiast.
+            <label>
+              Rwanda Coding Academy Graduate, Software Engineer, Mentor,
+              Blogger, Writer & Gymnast.
+            </label>
+            <label className="block mt-2">
+              2021 NASA Space Apps Galactic Problem Solver.
+            </label>
+            <label className="mt-4 block">
+              Fun fact: I need to take enough sleep before tackling down a tough
+              task 😃.
+            </label>
           </p>
           <div className="mt-2 social-wrapper">
             {media.map((platform: ISocialMedia, index: number) => (
