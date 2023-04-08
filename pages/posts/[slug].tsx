@@ -51,7 +51,7 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           </h1>
           <div className="flex my-5 mb-10" style={{ height: '50px' }}>
             <Image
-              src="/authors/pn.jpg"
+              src="/authors/pn.png"
               width="50"
               height="50"
               className="rounded-full cursor-pointer avatar-style"
