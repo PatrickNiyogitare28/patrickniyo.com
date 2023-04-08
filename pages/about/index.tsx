@@ -18,10 +18,6 @@ export const About = (): JSX.Element => {
       link: 'https://www.linkedin.com/in/patrick-niyogitare-76b469184/',
     },
     {
-      name: 'Gist',
-      link: 'https://gist.github.com/PatrickNiyogitare28',
-    },
-    {
       name: 'Youtube',
       link: 'https://www.youtube.com/@patrickniyogitare6555/videos',
     },
@@ -34,11 +30,11 @@ export const About = (): JSX.Element => {
     >
       <div
         className="flex justify-between w-4/5  items-center about-container"
-        style={{ height: '60vh' }}
+        style={{ minHeight: '70vh' }}
       >
         <div className="w-2/5">
           <Image
-            src="/images/avatar.jpg"
+            src="/images/avatar.png"
             alt="Patrick Niyogitare"
             width="200"
             height="200"
@@ -87,13 +83,6 @@ export const About = (): JSX.Element => {
             </a>
           </p>
         </div>
-      </div>
-      <div className="w-full">
-        <Image
-          src="https://activity-graph.herokuapp.com/graph?username=patrickniyogitare28&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=1f6fea&color=fefefe"
-          height={500}
-          width={1000}
-        />
       </div>
     </Layout>
   );
