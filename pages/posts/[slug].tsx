@@ -44,8 +44,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   };
   return (
     <Layout customMeta={customMeta}>
-      <div className="flex justify-around">
-        <article>
+      <div className="md:flex md:justify-around">
+        <article className="">
           <h1 className="mb-3 text-5xl text-gray-900 dark:text-white">
             {frontMatter.title}
           </h1>
