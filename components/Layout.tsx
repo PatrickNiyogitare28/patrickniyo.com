@@ -17,7 +17,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       <Head customMeta={customMeta} />
       <header className="gradient-header">
-        <div className="max-w-5xl px-4 mx-auto">
+        <div className="max-w-5xl px-4 mx-auto ">
           <div className="flex items-center justify-between py-2 cursor-pointer">
             <div style={{}} className="flex justify-between items-center ">
               <Link href="/">
@@ -34,7 +34,9 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         </div>
       </header>
       <main>
-        <div className="max-w-5xl px-8 py-4 mx-auto">{children}</div>
+        <div className="md:max-w-5xl px-8 py-4 mx-auto overflow-x-hidden">
+          {children}
+        </div>
       </main>
       <footer className="py-8 flex justify-around">
         <div className="max-w-5xl px-8 mx-auto ">

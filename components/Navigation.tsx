@@ -3,10 +3,10 @@ import React from 'react';
 
 const Navigation = (): JSX.Element => {
   return (
-    <nav>
+    <nav className="flex md:gap-12 gap-6">
       <Link href="/">
         <a
-          className="text-gray-500  dark:text-white pr-6 py-4"
+          className="text-gray-500  dark:text-white  py-4"
           style={{ fontWeight: 'bolder' }}
         >
           Home
@@ -14,7 +14,7 @@ const Navigation = (): JSX.Element => {
       </Link>
       <Link href="/about">
         <a
-          className="text-gray-500 dark:text-white px-6 py-4"
+          className="text-gray-500 dark:text-white  py-4"
           style={{ fontWeight: 'bolder' }}
         >
           About
@@ -22,10 +22,10 @@ const Navigation = (): JSX.Element => {
       </Link>
       <Link href="/publications">
         <a
-          className="text-gray-500 dark:text-white px-6 py-4"
+          className="text-gray-500 dark:text-white  py-4"
           style={{ fontWeight: 'bolder' }}
         >
-          Publications
+          Pubs
         </a>
       </Link>
     </nav>
