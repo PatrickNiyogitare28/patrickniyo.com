@@ -78,10 +78,6 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           </div>
         </article>
       </div>
-      {/* <div className="mt-10">
-        <p className='text-xl'>Read more interesting articles ....</p>
-        <ArticleFooter />
-      </div> */}
     </Layout>
   );
 };
