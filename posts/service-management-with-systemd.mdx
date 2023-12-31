@@ -1,0 +1,126 @@
+---
+title: SystemD - An alternative to PM2
+description: Discover the Unmatched Advantages of Systemd Over PM2; Maximizing Service Management Potential with Comprehensive Benefits and Detailed Configuration!
+date: '2023-12-31'
+image: '/images/dev-ops.png'
+tags:
+  - DevOps
+---
+
+---
+
+<Image
+  alt={`WEB3`}
+  src={`/images/dev-ops.png`}
+  width={1440}
+  height={960}
+  priority
+/>
+
+
+## Embracing Systemd as an Alternative to PM2 for Service Management
+
+If you're a DevOps engineer or a backend developer immersed in the intricacies of infrastructure management, this piece is tailored specifically for you.
+
+In the realm of process management for Node.js applications, PM2 has been a reliable go-to tool. However, systemd, a system and service manager for Linux, offers a robust alternative for managing and monitoring services. Let’s explore how systemd's advantages surpass those of PM2 and delve into configuring a service using systemd.
+
+
+### Beyond Node.js: Systemd's Extensive Capabilities
+
+#### 1. **Diverse Service Management**
+Systemd isn't limited to managing Node.js services; it's a universal service manager. It extends its capabilities to handle services across multiple languages and frameworks, providing a centralized platform for holistic system management.
+
+#### 2. **Integrated Jenkins-like Functionality**
+The traditional use of Jenkins for continuous integration and delivery can be complemented by systemd's capabilities. By leveraging its service management features, systemd can effectively play the role of Jenkins, minimizing the need for resource-intensive CI/CD tools for service deployment.
+
+#### 3. **Resource Optimization for Spring Boot Services**
+As Spring Boot applications continue to gain popularity, optimizing resources becomes crucial. Unlike resource-consuming tools like Jenkins, systemd offers a lightweight yet powerful alternative for managing Spring Boot services, ensuring efficient resource utilization.
+
+By leveraging systemd's versatile functionalities, administrators can streamline service management, eliminate the dependency on resource-heavy tools like Jenkins, and optimize the system for improved performance, especially when handling Spring Boot services.
+
+### Benefits of Systemd over PM2
+
+#### 1. **Boot-Time Service Activation**
+Systemd excels in initiating services during system boot, ensuring seamless activation without manual intervention. This feature guarantees that critical services, like your Node.js application, are automatically launched upon system startup. PM2, on the other hand, typically requires manual setup for boot-time activation.
+
+#### 2. **Pre-execution Commands and Build Processes**
+Unlike PM2, Systemd allows for the definition of pre-execution commands, enabling administrators to execute specific tasks or build processes before starting a service. This capability streamlines workflows, allowing for tasks such as dependency installation or project building to occur automatically before service initialization, ensuring a smoother startup process.
+
+#### 3. **Enhanced Control and Flexibility**
+Systemd provides administrators with granular control over service configurations, surpassing the options offered by PM2. The ability to define pre-execution commands adds an extra layer of customization, ensuring precise control over service behavior based on specific requirements.
+
+#### 4. **Automatic Detection of Changes and Service Restart**
+Systemd actively monitors changes within the target directory or project associated with a service. When modifications are detected, such as file changes or updates in the project directory, Systemd can automatically restart the service, ensuring that the latest changes take effect promptly. PM2 may not inherently offer this level of automated monitoring and service restart based on project alterations.
+
+#### 5. **System Integration and Resource Utilization**
+Systemd's seamless integration with Linux distributions optimizes system resources, prioritizing service management within the core functionalities of the operating system. This integration ensures efficient resource allocation and utilization, contributing to better overall system performance compared to PM2.
+
+#### 6. **Reliable Process Monitoring**
+Utilizing features like `systemctl status`, Systemd offers a centralized and robust process monitoring system. This enables comprehensive insights into service health, facilitating efficient troubleshooting and maintenance, which might not be as extensive in PM2.
+
+### Configuration of a Service using Systemd
+
+Let’s walk through the steps to configure a Node.js application service using systemd, using the example of an app named "todo.app".
+
+#### 1. **Create or Edit the Service File**
+Open or create the systemd service file for "todo.app" using your preferred text editor with administrative privileges. 
+
+```bash
+sudo nano /etc/systemd/system/todo.app.service
+```
+
+#### 2. **Paste the Configuration Details**
+Insert the following code snippet into the file:
+
+```ini
+[Unit]
+Description=The Todo App
+
+[Service]
+User=root
+WorkingDirectory=/opt/todo.app/actions-runner/_work/todo.app/todo.app 
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm run start
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=todo.app
+
+[Install]
+WantedBy=multi-user.target
+```
+
+#### 3. **Save and Close the File**
+Save the changes made to the file and close the editor.
+
+#### 4. **Reload Systemd Daemon**
+To pick up the changes made to the service file, reload the systemd daemon:
+
+```bash
+sudo systemctl daemon-reload
+```
+
+#### 5. **Start and Manage the Service**
+- **Start the Service:** `sudo systemctl start todo.app`
+- **Check Service Status:** `sudo systemctl status todo.app`
+- **Enable Auto-Start at Boot:** `sudo systemctl enable todo.app`
+- **Verify Auto-Start Setting:** `sudo systemctl is-enabled todo.app`
+- **View Service Logs:** `sudo journalctl -u todo.app`
+
+#### 6. **Additional Service Management**
+- **Stop the Service:** `sudo systemctl stop todo.app`
+- **Restart the Service:** `sudo systemctl restart todo.app`
+- **Reload the Service without Stopping:** `sudo systemctl reload todo.app`
+
+By leveraging these commands, you can effectively manage the "todo.app" service with systemd.
+
+Systemd provides a more integrated, system-level approach to service management compared to PM2, offering better control, monitoring, and resource utilization. Consider exploring systemd for your service management needs and harness its robust features for seamless operation of critical applications.
+
+---
+
+> Hope that was awesome you can follow me on twitter or DM for any point. [niyogitare](https://twitter.com/niyogitare)
+
+[#DevOps]()
+
+#
