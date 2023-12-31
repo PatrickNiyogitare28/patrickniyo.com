@@ -17,10 +17,10 @@ export const About = (): JSX.Element => {
       name: 'LinkedIn',
       link: 'https://www.linkedin.com/in/patrick-niyogitare-76b469184/',
     },
-    {
-      name: 'Youtube',
-      link: 'https://www.youtube.com/@patrickniyogitare6555/videos',
-    },
+    // {
+    //   name: 'Youtube',
+    //   link: 'https://www.youtube.com/@patrickniyogitare6555/videos',
+    // },
   ];
   return (
     <Layout
