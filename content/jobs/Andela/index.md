@@ -4,13 +4,28 @@ title: 'Technical Mentor'
 company: 'Andela'
 location: 'Kigali, Rw'
 range: 'Aug 2021 - Sep 2022'
-url: 'https://wastezon.com'
+url: 'https://andela.com'
 ---
 
-- Collaborated with the mobile development team to implement new features and revamp the [Wastezon App](https://apps.apple.com/rw/app/wastezon/id6443628211) to version 2.0, enhancing user experience and functionality.
-- Facilitated the deployment of the app on both the [Play Store](https://play.google.com/store/apps/details?id=com.wastezon.mobile) and the [App Store](https://apps.apple.com/rw/app/wastezon/id6443628211), ensuring a smooth release process.
-- Optimized app performance and responsiveness across various devices and operating systems, improving user satisfaction.
-- Conducted thorough code reviews and debugging sessions, ensuring high code quality and reducing technical debt.
-- Integrated third-party APIs and services to extend app functionality and provide a richer user experience.
+Here are the points revised for stronger impact on your resume, with additional items added for both 2021 and 2022:
 
-**Skills** : `React Native` `Expo` `AWS` `Agile Methodology`
+***2021***
+- Mentor, Andela Web Crash Course Program
+  - Taught early developers the fundamentals of web development, including HTML, CSS, and JavaScript.
+  - Guided students in prototyping and design using Figma.
+  - Introduced basics of responsive design and web accessibility best practices.
+  - Conducted workshops on version control with Git and GitHub.
+  - Provided an overview of web development tools and environments (IDEs, browser developer tools).
+
+***2022***
+- Technical Team Lead, Andela Technical Leadership Program (TTL)
+  - Collaborated with engineering managers to align training programs with industry standards and company goals.
+  - Prepared and delivered advanced web development lessons, including React.js and RESTful APIs.
+  - Taught Agile methodologies and best practices, including Scrum and Kanban frameworks.
+  - Conducted one-on-one reviews with trainees, providing personalized feedback and career advice.
+  - Facilitated weekly sprint planning, daily stand-ups, and retrospective meetings to foster Agile practices.
+  - Assisted trainees in building and deploying full-stack web applications.
+  - Developed curriculum for intermediate topics such as state management with Redux, authentication, and deployment strategies.
+  - Created and maintained documentation to support trainee learning and progress tracking.
+
+**Skills** : `Web Development` `Agile` `Project Management` `Team Leading`
