@@ -1,7 +1,7 @@
 ---
 date: '2015-12-21'
-title: 'Creative Technologist Co-op'
-company: 'MullenLowe'
+title: 'Cofounder & Lead Developer'
+company: 'Yombi'
 location: 'Boston, MA'
 range: 'July - December 2015'
 url: 'https://us.mullenlowe.com/'
