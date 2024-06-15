@@ -1,7 +1,7 @@
 ---
 date: '2016-12-21'
 title: 'Mobile Developer'
-company: 'Wastezone'
+company: 'Wastezon'
 location: 'Kigali, Rw'
 range: 'July 2022 - Nov 2022 (Contract)'
 url: 'https://wastezon.com'
