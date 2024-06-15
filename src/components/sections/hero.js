@@ -61,12 +61,11 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Patrick Niyo.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const three = <h3 className="big-heading">I build  & mentor aspring devs.</h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
+      I am a software engineer specializing in building apps for both web and mobile platforms, with a strong focus on web system architecture design & mentoring aspiring developers. Currently, I’m building human-centered products
         at{' '}
         <a href="https://bag.work" target="_blank" rel="noreferrer">
           BAG Technologies
@@ -78,10 +77,10 @@ const Hero = () => {
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="https://blog.patrickniyo.com"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Explore My Blogging Garden!
     </a>
   );
 

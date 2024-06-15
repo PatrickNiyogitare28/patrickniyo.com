@@ -103,10 +103,11 @@ const Footer = () => {
             ))}
         </ul>
       </StyledSocialLinks>
-
+       
+      <p style={{ fontSize: '12px' }}>&copy; Patrick Niyo 2021 - {new Date().getFullYear()}</p>
       <StyledCredit tabindex="-1">
         <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+          <div>Adopted From Brittany Chiang</div>
 
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">
