@@ -68,8 +68,8 @@ const Hero = () => {
         I am a software engineer specializing in building apps for both web and mobile platforms,
         with a strong focus on web system architecture design & mentoring aspiring developers.
         Currently, I’m building human-centered products at{' '}
-        <a href="https://bag.work" target="_blank" rel="noreferrer">
-          BAG Technologies
+        <a href="https://qtglobal.rw/" target="_blank" rel="noreferrer">
+          QT Global Software LTD
         </a>
         .
       </p>

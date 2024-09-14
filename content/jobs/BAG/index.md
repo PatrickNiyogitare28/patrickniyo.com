@@ -3,7 +3,7 @@ date: '2018-05-14'
 title: 'Software Engineer'
 company: 'BAG Technologies'
 location: 'Kigali, Rw'
-range: 'April 2023 - Present'
+range: 'April 2023 - Aug 2024'
 url: 'https://bag.work/'
 ---
 
